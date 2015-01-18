@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# compare the two files
+diff --side-by-side --text "$1" "$2" |
+
+# get the line numbers of occurrences of `<`, `>`, `/`, `\`, `|`
+grep --line-number --extended-regexp '<|>|/|\\|\|' |
+
+# take the first match
+head -1 |
+
+# trim off everything after the number
+cut -f1 -d:

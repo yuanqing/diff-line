@@ -1,0 +1,9 @@
+language: sh
+
+before_script:
+  - chmod +x diff-line
+  - curl -sS -o tests/roundup https://raw.githubusercontent.com/bmizerany/roundup/695ae7609353a360556e1f465ac81ce447235179/roundup.sh
+  - chmod +x tests/roundup
+
+script:
+  - cd tests && ./roundup
