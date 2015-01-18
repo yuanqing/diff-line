@@ -8,16 +8,16 @@ file="/usr/local/bin/diff-line"
 
 # prompt user if `diff-line` is already in `/usr/local/bin`
 if [ -f $file ]; then
-	while true; do
-	  read -p "Override /usr/local/bin/diff-line (y/n)? " yn
-	  case $yn in
-	    [Yy]*)
-				break;;
-	    *)
+  while true; do
+    read -p "Override /usr/local/bin/diff-line (y/n)? " yn
+    case $yn in
+      [Yy]*)
+        break;;
+      *)
         echo "Installation cancelled"
-				exit;;
-	  esac
-	done
+        exit;;
+    esac
+  done
 fi
 
 # download the script
