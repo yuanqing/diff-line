@@ -8,6 +8,15 @@
 diff-line file1 file2
 ```
 
+## Installation
+
+Run `install.sh` to install `diff-line` into `/usr/local/bin`:
+
+```sh
+$ curl -sS -o install.sh https://raw.githubusercontent.com/yuanqing/diff-line/master/diff-line
+$ sh ./install.sh
+```
+
 ## License
 
 [MIT license](https://github.com/yuanqing/diff-line/blob/master/LICENSE)
