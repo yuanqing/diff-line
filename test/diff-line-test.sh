@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env roundup
 
 describe "diff-line file1 file2"
 
