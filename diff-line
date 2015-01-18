@@ -1,13 +1,19 @@
 #!/bin/sh
 
-# compare the two files
+# exit if less than 2 arguments
+if [ "$#" -lt 2 ]; then
+  echo "Usage: diff-line file1 file2"
+  exit 1
+fi
+
+# diff the two files
 diff --side-by-side --text "$1" "$2" |
 
-# get the line numbers of occurrences of `<`, `>`, `/`, `\`, `|`
+# get the line numbers of occurrences of `<`, `>`, `/`, `\`, and `|`
 grep --line-number --extended-regexp '<|>|/|\\|\|' |
 
 # take the first match
 head -1 |
 
-# trim off everything after the number
+# trim off everything after the line number
 cut -f1 -d:
