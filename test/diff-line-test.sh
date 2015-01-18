@@ -6,6 +6,13 @@ t() {
   test "$(../diff-line ./fixtures/$1 ./fixtures/$2)" "=" "$3"
 }
 
+it_prints_usage_message() {
+  [[ "$(../diff-line)" == "Usage:"* ]] && foo=1
+  test -n "$foo"
+  [[ "$(../diff-line foo)" == "Usage:"* ]] && bar=1
+  test -n "$bar"
+}
+
 it_test_0_empty() {
   t "0_empty" "0_empty" ""
   t "0_empty" "1_bar" "1"
