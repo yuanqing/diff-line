@@ -2,15 +2,28 @@
 
 describe "diff-line file1 file2"
 
+##########################################################################################
+
+# helper functions
+
+starts_with() {
+  case $1 in
+    $2) true;;
+     *) false;;
+  esac
+}
+
 t() {
   test "$(../diff-line ./fixtures/$1 ./fixtures/$2)" "=" "$3"
 }
 
+##########################################################################################
+
+# tests
+
 it_prints_usage_message() {
-  [[ "$(../diff-line)" == "Usage:"* ]] && foo=1
-  test -n "$foo"
-  [[ "$(../diff-line foo)" == "Usage:"* ]] && bar=1
-  test -n "$bar"
+  starts_with "$(../diff-line)" "Usage*"
+  starts_with "$(../diff-line) foo" "Usage*"
 }
 
 it_test_0_empty() {
