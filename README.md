@@ -10,7 +10,7 @@ diff-line file1 file2
 
 ## Installation
 
-Run `install.sh` to install `diff-line` into `/usr/local/bin`:
+Run [`install.sh`](https://raw.githubusercontent.com/yuanqing/diff-line/master/install.sh) to install `diff-line` into `/usr/local/bin`:
 
 ```sh
 $ curl -sS -o install.sh https://raw.githubusercontent.com/yuanqing/diff-line/master/diff-line
