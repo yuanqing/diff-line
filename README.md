@@ -5,12 +5,22 @@
 ## Usage
 
 ```sh
-diff-line file1 file2
+$ diff-line
+Usage: diff-line file1 file2
+$ cat x
+foo
+bar
+$ cat y
+foo
+baz
+$ diff-line x x
+$ diff-line x y
+2
 ```
 
 ## Installation
 
-Run [`install.sh`](https://raw.githubusercontent.com/yuanqing/diff-line/master/install.sh) to install `diff-line` into `/usr/local/bin`:
+Run [`install.sh`](https://raw.githubusercontent.com/yuanqing/diff-line/master/install.sh) to install `diff-line` into your `/usr/local/bin`:
 
 ```sh
 $ curl -sS -o install.sh https://raw.githubusercontent.com/yuanqing/diff-line/master/install.sh
